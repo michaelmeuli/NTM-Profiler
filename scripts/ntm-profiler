@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#!/home/michael/mambaforge/envs/ntmscope/bin/python
 import sys
 import argparse
 import ntm_profiler as ntmp
@@ -193,7 +193,7 @@ def main_update_db(args):
         for species in json.load(open('variables.json'))['species']:
             pp.infolog(f'\nCreating DB for {species}')
             barcode_arg = "--barcode barcode.bed" if os.path.isfile("barcode.bed") else ""
-            pp.run_cmd(f'ntm-profiler create_resistance_db --prefix {species.replace(" ","_")} --csv resistance_variants.csv {barcode_arg} --load')
+            pp.run_cmd(f'ntm-profiler create_resistance_db --prefix {species.replace(" ","_")} --watchlist gene_watchlist.csv {barcode_arg} --load')
         os.chdir('../')
 
 def main_list_db(args):
