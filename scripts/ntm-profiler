@@ -131,7 +131,7 @@ def main_profile(args):
     ])
     results["resistance_db_version"] = args.conf["version"]
 
-    results = ntmp.reformat(results,args.conf)
+    #results = ntmp.reformat(results,args.conf)
 
     ntmp.write_outputs(args,results)
 
